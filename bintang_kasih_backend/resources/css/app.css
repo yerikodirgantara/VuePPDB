@@ -1,0 +1,955 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus, button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+/* =================== VARIABEL =================== */
+/* =================== HOME STYLE =================== */
+.hero-section {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  margin-top: 80px; /* Agar tidak nabrak dengan navbar */
+}
+
+.carousel-item img { /* Gambar carousel */
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.8; /* Transparansi gambar, sesuaikan nilai ini (0.1 - 1) */
+  box-shadow: 0 4px 8px #7f86d4;
+}
+
+h2,
+h5 {
+  color: #7f86d4;
+}
+
+.content {   /* Untuk konten teks di tengah */
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+.hero-title, 
+.hero-subtitle {
+  background-color: rgba(0, 0, 0, 0.014);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  text-shadow: 0 4px 8px #7f86d4;
+}
+
+.hero-title {   /* Teks judul dengan shadow dan background semi-transparan */
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {   /* Subjudul dengan shadow dan background semi-transparan */
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.typewriter-effect {   /* Typewriter Effect Styling */
+  display: inline-block;
+  position: relative;
+  font-family: monospace;
+  font-size: 3.5rem;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  position: absolute;
+  right: -0.1em;
+  bottom: 0;
+  font-size: inherit;
+  color: #7c82c0;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.card {   /* Cards Styling */
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  box-shadow: 0 4px 8px #7f86d4;
+  padding: 10px;
+  border-radius: 30px;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  color: #7c82c0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.misi-list {
+  text-align: justify;
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+section {
+  padding: 60px 0;
+  margin-top: 55px; /* Tambahkan margin top agar tidak nabrak navbar */
+}
+
+.section-box {   /* Lokasi and Pendaftaran Sections */
+  padding: 60px 0;
+  margin-top: 55px;
+}
+
+.bagan-organisasi img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bagan-organisasi .list-group-item {
+  transition: background-color 0.3s;
+}
+
+.bagan-organisasi .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.map-container {
+  position: relative;
+  padding-bottom: 75%; /* 4:3 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@keyframes pulse-with-longer-pause {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50%, 60% {
+    transform: scale(1.1);
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 46px;
+  height: 46px;
+  bottom: 70px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-with-longer-pause 4s ease-in-out infinite;
+}
+
+.whatsapp-float img {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.custom-btn {
+  background-color: #1a82de;
+  border-color: #1a82de;
+}
+
+.custom-btn:hover {
+  background-color: #1d65a4;
+  border-color: #1d65a4;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .typewriter-effect,
+  .cursor {
+    font-size: 1.5rem;
+  }
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .typewriter-effect,
+  .cursor {
+    font-size: 2rem;
+  }
+  .card {
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(127, 134, 212, 0.652);
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .card-body {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .card {
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(127, 134, 212, 0.6);
+    border-radius: 25px;
+  }
+  .card-body {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    padding: 25px;
+    box-shadow: 0 4px 8px #7f86d4;
+    border-radius: 30px;
+  }
+  .card-body {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+
+/* =================== NAVBAR STYLE =================== */
+/* =================== FORMULIR STYLE =================== */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(127, 134, 212, 0.652);
+}
+.form-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-container .form-group {
+  margin-bottom: 15px;
+}
+.form-container .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.form-container .form-group input,
+.form-container .form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-container .form-group input:focus,
+.form-container .form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.form-container .form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.form-container .form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.form-container .form-actions button:first-child {
+  background: #f8f9fa;
+  color: #333;
+}
+.form-container .form-actions button:last-child {
+  background: #1d65a4;
+  color: #fff;
+}
+.form-container .form-actions button:hover {
+  opacity: 0.9;
+}
+
+/* =================== AYAH STYLE =================== */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type=text],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type=text]:focus,
+select:focus {
+  border-color: #007bff;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 15px;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+/* =================== IBU STYLE =================== */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.form-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.form-container .form-group {
+  margin-bottom: 15px;
+}
+.form-container .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.form-container .form-group input,
+.form-container .form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-container .form-group input:focus,
+.form-container .form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.form-container .form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.form-container .form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-container .form-actions button:first-child {
+  background: #f8f9fa;
+  color: #333;
+}
+.form-container .form-actions button:last-child {
+  background: #007bff;
+  color: #fff;
+}
+
+/* =================== PEMBAYARAN STYLE =================== */
+.payment-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  width: 400px;
+  margin: 0 auto;
+}
+.payment-section .form-group {
+  margin-bottom: 15px;
+}
+.payment-section .form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+.payment-section .form-group select,
+.payment-section .form-group input[type=file] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.payment-section .form-group .error {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.payment-section .price-section {
+  margin: 20px 0;
+}
+.payment-section .price-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+.payment-section button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.payment-section button:hover {
+  background-color: #45a049;
+}
+.payment-section button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* =================== REGISTER =================== */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.register-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(127, 134, 212, 0.8823529412);
+  transition: transform 0.3s ease-in-out;
+}
+.register-container:hover {
+  transform: translateY(-5px);
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #007bff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+.input-field.has-error {
+  border-color: #dc3545;
+}
+.input-field.has-error:focus {
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.register-button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 4px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.message.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+.message.success {
+  color: #28a745;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.login-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+}
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .register-container {
+    padding: 20px;
+  }
+  .register-title {
+    font-size: 24px;
+  }
+  .input-field, .register-button {
+    font-size: 14px;
+  }
+}
+/* =================== LOGIN =================== */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px #7f86d4e1;
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid #e1e1e1; /* Adding border for subtle emphasis */
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+}
+
+.login-title {
+  text-align: center;
+  color: #4a90e2; /* Blue color for title */
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d1d1d1; /* Light gray border */
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #4a90e2; /* Blue color on focus */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.25); /* Blue shadow on focus */
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #4a90e2, #50e3c2); /* Gradient button background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(90deg, #007bff, #2d8cf0); /* Darker gradient on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.error {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+  }
+  
+  .input-field, .login-button {
+    font-size: 14px;
+  }
+}
+
+.login-link-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+
+  #lokasi-sekolah {
+    background: linear-gradient(to right, #eef2ff, #f9f0ff); /* Background gradient */
+    position: relative; /* Untuk pseudo-elemen */
+    padding: 50px 15px; /* Ruang dalam */
+    overflow: hidden; /* Untuk pseudo-elemen */
+    width: 100%; /* Pastikan elemen memanjang penuh */
+    z-index: 0; /* Layer paling bawah */
+}
+
+#lokasi-sekolah .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#lokasi-sekolah .container {
+    max-width: 100%; /* Pastikan kontainer memanjang penuh */
+    padding: 0 15px; /* Padding untuk isi */
+    z-index: 2; /* Konten tetap di atas dekorasi */
+    position: relative; /* Pastikan konten tidak terpengaruh oleh pseudo-elemen */
+}
+
+#lokasi-sekolah::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Posisi lingkaran atas */
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: #ff65b1; /* Warna lingkaran dekorasi */
+    border-radius: 50%;
+    z-index: 0; /* Di bawah konten */
+    pointer-events: none; /* Nonaktifkan hover */
+}
+
+#lokasi-sekolah::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Posisi lingkaran bawah */
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: #ff66b2; /* Warna lingkaran dekorasi */
+    border-radius: 50%;
+    z-index: 0; /* Di bawah konten */
+    pointer-events: none; /* Nonaktifkan hover */
+}
+
+#lokasi-sekolah h2,
+#lokasi-sekolah p,
+#lokasi-sekolah .card-body {
+    position: relative; /* Pastikan teks berada di atas dekorasi */
+    z-index: 2;
+}
+
+#keunggulan {
+  scroll-margin-top: 100px; /* Sesuaikan jarak sesuai tinggi navbar atau keinginan */
+}
+
+/* Teachers Grid Section Background */
+.teachers-grid {
+  background: linear-gradient(135deg, #f0f4ff, #d9e4f5); /* Gradasi warna lembut */
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+/* Efek Lingkaran Dekoratif */
+.teachers-grid::before,
+.teachers-grid::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(129, 135, 213, 0.3), transparent);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.teachers-grid::before {
+  top: -80px;
+  left: -80px;
+}
+
+.teachers-grid::after {
+  bottom: -80px;
+  right: -80px;
+}
+
+/* Swiper Card Styling */
+.teachers-grid .card {
+  position: relative;
+  z-index: 1; /* Pastikan konten di atas background dekoratif */
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teachers-grid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(129, 135, 213, 0.5);
+}
+
+
+/* =================== FOOTER STYLE =================== *//*# sourceMappingURL=app.css.map */

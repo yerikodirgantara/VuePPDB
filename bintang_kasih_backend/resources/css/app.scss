@@ -1,0 +1,1078 @@
+// :root {
+//   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+//   line-height: 1.5;
+//   font-weight: 400;
+//   color-scheme: light dark;
+//   color: rgba(255, 255, 255, 0.87);
+//   background-color: #242424;
+//   font-synthesis: none;
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// a {
+//   font-weight: 500;
+//   color: #646cff;
+//   text-decoration: inherit;
+
+//   &:hover {
+//     color: #535bf2;
+//   }
+// }
+
+// body {
+//   margin: 0;
+//   display: flex;
+//   place-items: center;
+//   min-width: 320px;
+//   min-height: 100vh;
+// }
+
+// h1 {
+//   font-size: 3.2em;
+//   line-height: 1.1;
+// }
+
+// button {
+//   border-radius: 8px;
+//   border: 1px solid transparent;
+//   padding: 0.6em 1.2em;
+//   font-size: 1em;
+//   font-weight: 500;
+//   font-family: inherit;
+//   background-color: #1a1a1a;
+//   cursor: pointer;
+//   transition: border-color 0.25s;
+
+//   &:hover {
+//     border-color: #646cff;
+//   }
+
+//   &:focus,
+//   &:focus-visible {
+//     outline: 4px auto -webkit-focus-ring-color;
+//   }
+// }
+
+// .card {
+//   padding: 2em;
+// }
+
+// #app {
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   padding: 2rem;
+//   text-align: center;
+// }
+
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     color: #213547;
+//     background-color: #ffffff;
+//   }
+
+//   a {
+//     &:hover {
+//       color: #747bff;
+//     }
+//   }
+
+//   button {
+//     background-color: #f9f9f9;
+//   }
+// }
+
+
+/* =================== VARIABEL =================== */
+
+$primary-color: #7f86d4;
+$secondary-color: #7c82c0;
+$bg-color: rgba(0, 0, 0, 0.014);
+$shadow-color: rgba(127, 134, 212, 0.652);
+$whatsapp-color: #25d366;
+$whatsapp-hover-color: #128c7e;
+$btn-primary-bg: #1a82de;
+$btn-primary-hover-bg: #1d65a4;
+
+/* =================== HOME STYLE =================== */
+
+// body {
+//     padding-top: 80px; /* Agar konten tidak tertutup oleh navbar */
+// }
+
+.hero-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: 80px; /* Agar tidak nabrak dengan navbar */
+}
+
+.carousel-item {
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: contain;
+        opacity: 0.8; /* Transparansi gambar, sesuaikan nilai ini (0.1 - 1) */
+        box-shadow: 0 4px 8px $primary-color;
+    }
+}
+
+h2,
+h5 {
+    color: $primary-color;
+}
+
+.content {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.hero-title,
+.hero-subtitle {
+    background-color: $bg-color;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    text-shadow: 0 4px 8px $primary-color;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.typewriter-effect {
+    display: inline-block;
+    position: relative;
+    font-family: monospace;
+    font-size: 3.5rem;
+    white-space: nowrap;
+
+    .cursor {
+        display: inline-block;
+        position: absolute;
+        right: -0.1em;
+        bottom: 0;
+        font-size: inherit;
+        color: $secondary-color;
+        animation: blink-caret 0.75s step-end infinite;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    box-shadow: 0 4px 8px $primary-color;
+    padding: 10px;
+    border-radius: 30px;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    i {
+        color: $secondary-color;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.misi-list {
+    text-align: justify;
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+section {
+    padding: 60px 0;
+    margin-top: 55px; /* Tambahkan margin top agar tidak nabrak navbar */
+}
+
+.section-box {
+    padding: 60px 0;
+    margin-top: 55px;
+}
+
+.bagan-organisasi {
+    img {
+        object-fit: cover;
+    }
+
+    .list-group-item {
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #f8f9fa;
+        }
+    }
+}
+
+.map-container {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+@keyframes pulse-with-longer-pause {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50%,
+    60% {
+        transform: scale(1.1);
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 46px;
+    height: 46px;
+    bottom: 70px;
+    right: 40px;
+    background-color: $whatsapp-color;
+    color: #fff;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse-with-longer-pause 4s ease-in-out infinite;
+
+    img {
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        background-color: $whatsapp-hover-color;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+}
+
+.custom-btn {
+    background-color: $btn-primary-bg;
+    border-color: $btn-primary-bg;
+
+    &:hover {
+        background-color: $btn-primary-hover-bg;
+        border-color: $btn-primary-hover-bg;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .typewriter-effect,
+    .cursor {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .typewriter-effect,
+    .cursor {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 15px;
+        box-shadow: 0 2px 4px $shadow-color;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card-body {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .card {
+        padding: 20px;
+        box-shadow: 0 3px 6px rgba(127, 134, 212, 0.6);
+        border-radius: 25px;
+    }
+
+    .card-body {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        padding: 25px;
+        box-shadow: 0 4px 8px $primary-color;
+        border-radius: 30px;
+    }
+
+    .card-body {
+        padding: 20px;
+        font-size: 18px;
+    }
+}
+
+/* =================== NAVBAR STYLE =================== */
+
+// /* Fixed Navbar Styling */
+// .navbar {
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     z-index: 1000;
+//     box-shadow: 0 4px 6px -1px rgba(127, 134, 212, 0.7); /* Tambahkan bayangan ungu di bawah navbar */
+
+//     .navbar-brand {
+//         img {
+//             width: 40px; /* Sesuaikan ukuran logo */
+//         }
+//     }
+
+//     .navbar-nav {
+//         .nav-link {
+//             color: #000;
+//             font-weight: bold;
+//             font-size: 16px;
+//             position: relative;
+//             padding-bottom: 5px; /* Ruang untuk animasi garis bawah */
+//             overflow: hidden;
+
+//             &::before {
+//                 content: "";
+//                 position: absolute;
+//                 width: 100%;
+//                 height: 3px;
+//                 bottom: 0;
+//                 left: -100%;
+//                 background-color: $primary-color; /* warna garis */
+//                 transition: all 0.4s ease; /* Kecepatan animasi */
+//             }
+
+//             &:hover::before {
+//                 left: 0;
+//             }
+
+//             &:hover {
+//                 color: #a41e1d; /* Ubah warna teks saat disorot */
+//             }
+//         }
+//     }
+// }
+
+// /* Dropdown item hover effect */
+// .dropdown-item {
+//     color: #000;
+//     font-weight: bold;
+//     font-size: 16px;
+//     position: relative;
+//     padding-bottom: 5px;
+//     overflow: hidden;
+
+//     &::before {
+//         content: "";
+//         position: absolute;
+//         width: 100%;
+//         height: 3px;
+//         bottom: 0;
+//         left: -100%;
+//         background-color: $primary-color; /* warna garis */
+//         transition: all 0.4s ease;
+//     }
+
+//     &:hover::before {
+//         left: 0;
+//     }
+
+//     &:hover {
+//         color: #a41e1d; /* Ubah warna teks saat disorot */
+//     }
+// }
+
+// /* Custom Hamburger Menu Icon */
+// .navbar-toggler {
+//     position: relative;
+//     background: transparent;
+//     border: none;
+//     outline: none;
+
+//     .navbar-toggler-icon {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         width: 30px;
+//         height: 20px;
+//         background: transparent;
+//         cursor: pointer;
+
+//         .bar {
+//             display: block;
+//             width: 30px;
+//             height: 3px;
+//             background-color: #333;
+//             transition: all 0.3s ease;
+//             position: relative;
+//         }
+//     }
+
+//     /* Hamburger menu icon transform on click */
+//     &.collapsed {
+//         .bar1 {
+//             transform: rotate(0deg) translate(0, 0);
+//         }
+
+//         .bar2 {
+//             opacity: 1;
+//         }
+
+//         .bar3 {
+//             transform: rotate(0deg) translate(0, 0);
+//         }
+//     }
+
+//     /* Transform the hamburger to X when the menu is open */
+//     &:not(.collapsed) {
+//         .bar1 {
+//             transform: rotate(45deg) translate(6px, 6px); /* Perbaiki nilai translate */
+//         }
+
+//         .bar2 {
+//             opacity: 0;
+//         }
+
+//         .bar3 {
+//             transform: rotate(-45deg) translate(6px, -6px); /* Perbaiki nilai translate */
+//         }
+//     }
+// }
+
+/* =================== FORMULIR STYLE =================== */
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  // Ganti box-shadow dengan warna ungu
+  box-shadow: 0 0 10px $shadow-color;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:first-child {
+        background: #f8f9fa;
+        color: #333;
+      }
+
+      &:last-child {
+        background: #1d65a4;
+        color: #fff;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+/* =================== AYAH STYLE =================== */
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #007bff;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* =================== IBU STYLE =================== */
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:first-child {
+                background: #f8f9fa;
+                color: #333;
+            }
+
+            &:last-child {
+                background: #007bff;
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* =================== PEMBAYARAN STYLE =================== */
+.payment-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+
+    .form-group {
+        margin-bottom: 15px;
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    }
+
+    .price-section {
+        margin: 20px 0;
+
+        h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #45a049;
+        }
+
+        &:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    }
+}
+
+/* =================== REGISTER =================== */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; // Same background as login
+}
+
+.register-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background-color: #ffffff; // Same background color as login-container
+  border-radius: 8px;
+  box-shadow: 0 10px 25px #7f86d4e1;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #007bff; // Match the login title color
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  &.has-error {
+    border-color: #dc3545;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+    }
+  }
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 4px;
+  animation: fadeIn 0.5s ease-in-out;
+
+  &.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+
+  &.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+}
+
+.login-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 20px;
+  }
+
+  .register-title {
+    font-size: 24px;
+  }
+
+  .input-field, .register-button {
+    font-size: 14px;
+  }
+}
+
+/* =================== LOGIN =================== */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); // Soft gradient background
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px #7f86d4e1;
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid #e1e1e1; // Adding border for subtle emphasis
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.login-title {
+  text-align: center;
+  color: #4a90e2; // Blue color for title
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d1d1d1; // Light gray border
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #4a90e2; // Blue color on focus
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.25); // Blue shadow on focus
+  }
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #4a90e2, #50e3c2); // Gradient button background
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(90deg, #007bff, #2d8cf0); // Darker gradient on hover
+    transform: scale(1.05); // Slightly scale up on hover
+  }
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+  }
+  
+  .input-field, .login-button {
+    font-size: 14px;
+  }
+}
+
+.login-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+
+/* =================== FOOTER STYLE =================== */
+
+// footer {
+//   background-color: #f8f9fa;
+//   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+//   padding: 1rem; /* Mengurangi padding */
+
+//   a {
+//     font-size: 18px; /* Mengurangi ukuran font ikon */
+//   }
+
+//   p {
+//     margin-bottom: 0;
+//     font-size: 0.875rem; /* Mengurangi ukuran font teks */
+//   }
+// }

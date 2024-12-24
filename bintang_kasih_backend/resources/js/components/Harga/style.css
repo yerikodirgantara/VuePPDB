@@ -1,0 +1,340 @@
+@font-face {
+  font-family: 'Codec Cold';
+  src: url('path/to/codec-cold.woff2') format('woff2'),
+       url('path/to/codec-cold.woff') format('woff');
+  font-weight: normal; /* Normal weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Codec Cold';
+  src: url('path/to/codec-cold-bold.woff2') format('woff2'),
+       url('path/to/codec-cold-bold.woff') format('woff');
+  font-weight: bold; 
+  font-style: bold;
+}
+
+/* Font utama untuk seluruh elemen kecuali .no-transaction */
+body,
+.payment-section,
+.payment-section .form-group label,
+.payment-section .form-group select,
+.payment-section .form-group input[type="file"],
+.payment-section .price-section,
+.payment-section .price-section h3,
+.payment-section button,
+.price-item,
+.price-item .label,
+.price-item .price,
+.price-item.total .label,
+.price-item.total .price {
+  font-family: 'Codec Cold', Arial, Helvetica, sans-serif; /* Menggunakan Codec Cold dengan cadangan */
+}
+
+.payment-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgb(129, 138, 240);
+}
+
+.payment-section .form-group {
+  margin-bottom: 20px;
+}
+
+.payment-section .form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.payment-section .form-group select,
+.payment-section .form-group input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.payment-section .form-group select:focus {
+  border-color: #4CAF50;
+}
+
+/* Custom style for the "Choose File" input */
+.payment-section .form-group input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.payment-section .form-group .custom-file-label {
+  display: block;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+}
+
+.payment-section .form-group .custom-file-label:hover {
+  background-color: #e1e1e1;
+}
+
+.payment-section .form-group input[type="file"]:focus + .custom-file-label {
+  border-color: #4CAF50;
+}
+
+.payment-section .form-group .error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.payment-section .price-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.payment-section .price-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.payment-section button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.payment-section button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Updated styling for .price-item */
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: 1px solid #e0e0e0; /* Tambahan border */
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+.price-item .label {
+  color: #4CAF50; /* Warna hijau untuk konsistensi */
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.price-item .price {
+  color: #333; /* Warna netral untuk harga */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+/* Styling total biaya agar lebih menonjol */
+.price-item.total {
+  border: 2px solid #4CAF50; /* Border lebih tebal */
+  background-color: #e7f9e6;
+}
+
+.price-item.total .label,
+.price-item.total .price {
+  font-size: 1.3rem;
+  color: #d9534f; /* Warna merah agar total lebih terlihat */
+  font-weight: bold;
+}
+
+/* Bagian .no-transaction tetap menggunakan font yang sudah ditentukan */
+.no-transaction {
+  text-align: center;
+  color: #555;
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px dashed #cfcfcf;
+  margin-top: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.no-transaction i {
+  font-size: 24px;
+  color: #f28b82;
+}
+
+.no-transaction p {
+  font-size: 18px;
+  margin: 8px 0 4px 0;
+  color: #444;
+}
+
+.no-transaction small {
+  font-size: 14px;
+  color: #888;
+}
+
+.invoice-section {
+  padding: 20px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.status-pending {
+  color: orange;
+}
+
+.status-confirmed {
+  color: rgb(9, 238, 9);
+}
+
+.status-failed {
+  color: rgb(240, 11, 11);
+}
+
+/* Responsiveness for tablet */
+@media (max-width: 768px) {
+  .payment-section {
+      padding: 15px;
+      width: 90%;
+      margin: 10px auto;
+  }
+  .price-section h3 {
+      font-size: 1.25rem;
+  }
+  .price-item.total .label,
+  .price-item.total .price {
+      font-size: 1.2rem;
+  }
+  .payment-section button {
+      padding: 10px;
+      font-size: 14px;
+  }
+}
+
+/* Further responsiveness for mobile */
+@media (max-width: 480px) {
+  .payment-section {
+      padding: 8px;
+      width: 100%;
+  }
+
+  .payment-section .form-group label {
+      font-size: 14px;
+  }
+
+  .payment-section .form-group select,
+  .payment-section .form-group input[type="file"] {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .price-section {
+      padding: 15px;
+  }
+
+  .price-section h3 {
+      font-size: 1rem;
+  }
+
+  .price-item.total .label,
+  .price-item.total .price {
+      font-size: 0.9rem;
+  }
+
+  .no-transaction p {
+      font-size: 16px;
+  }
+
+  .no-transaction small {
+      font-size: 12px;
+  }
+
+  .payment-section button {
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 8px;
+  }
+}
+
+.reset-button {
+  margin-top: 15px;
+}
+
+.bank-details {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  border: 1px solid #4CAF50;
+  text-align: center;
+}
+
+.bank-details h4 {
+  font-family: 'Codec Cold', Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #63e7ac;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.bank-details h4::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #4CAF50;
+  margin: 8px auto 0 auto;
+}
+
+.bank-info {
+  padding: 15px;
+  background-color: #e7f9e6;
+  border-radius: 8px;
+  border: 1px solid #4CAF50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bank-name {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.account-number, .account-name {
+  font-size: 1rem;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s;
+}
+
+.account-number:hover, .account-name:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

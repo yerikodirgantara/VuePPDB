@@ -1,0 +1,156 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(127, 134, 212); /* Bayangan dengan warna ungu */
+    max-width: 1200px; /* Menyesuaikan dengan ukuran yang lebih besar */
+    margin: 30px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Memastikan form berada di atas bayangan */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk setiap kartu */
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 5px solid #7f86d4;  /* Garis tepi berwarna biru pada setiap kartu */
+}
+
+.card h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #a41e1d; /* Garis bawah untuk memisahkan judul */
+    padding-bottom: 5px;
+}
+
+.highlight {
+    color: #a41e1d; /* Ganti warna sesuai keinginan */
+  }  
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+}
+
+/* Untuk grup form horizontal */
+.form-group-horizontal {
+    display: flex;
+    flex-direction: row; /* Layout default horizontal */
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.form-group-horizontal label {
+    flex: 1;
+}
+
+.form-group-horizontal input,
+.form-group-horizontal select {
+    flex: 2;
+    padding: 8px;
+    font-size: 1em;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.btn-back-reset {
+    background-color: #7f86d4; /* Warna oranye yang sama untuk 'Kembali' dan 'Reset' */
+    color: white;
+  }
+
+  .btn-submit {
+    background-color: #41B3A2; /* Warna biru untuk 'Kumpulkan' */
+    color: white;
+  }
+
+  .form-actions button {
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .form-actions button:hover {
+    opacity: 0.8;
+  }
+
+
+/* Media query untuk mobile (max-width 600px) */
+@media (max-width: 600px) {
+    .form-group-horizontal {
+        flex-direction: column; /* Ubah ke layout vertikal pada mobile */
+        align-items: flex-start;
+    }
+
+    .form-actions {
+        flex-direction: column; /* Tombol juga jadi vertikal pada mobile */
+    }
+}
+
+/* Media query untuk tablet (min-width 601px hingga max-width 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .form-group-horizontal {
+        flex-direction: row; /* Tetap horizontal untuk tablet */
+    }
+
+    .form-actions {
+        flex-direction: row; /* Tombol tetap horizontal di tablet */
+    }
+}
